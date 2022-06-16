@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import ProductCard from './components/ProductCard';
+import ProductCard from '@components/ProductCard';
 
 const ProductDetail = React.lazy(() => import('./routes/Product'));
 
