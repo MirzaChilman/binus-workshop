@@ -1,29 +1,23 @@
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
-import ProductCard from '@components/ProductCard';
-
-const ProductDetail = React.lazy(() => import('./routes/Product'));
+import { Routes, Route } from 'react-router-dom';
+import Layout from '@components/Layout';
+import Home from '@routes/Home';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Link to="/">Home</Link>
-        <Link to="/product/1">Product</Link>
-        <ProductCard />
-        <Routes>
-          <Route
-            exact
-            path="/product/:id"
-            element={
-              <React.Suspense fallback="Loading. . .">
-                <ProductDetail />
-              </React.Suspense>
-            }
-          />
-        </Routes>
-      </header>
-    </div>
+    <Layout>
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={
+            <React.Suspense fallback="Loading. . .">
+              <Home />
+            </React.Suspense>
+          }
+        />
+      </Routes>
+    </Layout>
   );
 }
 
