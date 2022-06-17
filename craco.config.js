@@ -15,6 +15,7 @@ module.exports = {
           extensions: ['.js', '.jsx'],
           alias: {
             '@components': './src/components',
+            '@routes': './src/routes',
           },
         },
       ],

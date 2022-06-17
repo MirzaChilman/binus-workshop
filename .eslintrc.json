@@ -23,13 +23,15 @@
         "quotes": [
             "error",
             "single"
-        ]
+        ],
+        "react/prop-types": 0
     },
     "settings": {
         "import/resolver": {
         "alias": {
             "map": [
-                ["@components", "./src/components"]
+                ["@components", "./src/components"],
+                ["@routes", "./src/routes"]
             ],
             "extensions": [".js",".jsx"]
         }
