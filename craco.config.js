@@ -2,10 +2,22 @@
 module.exports = {
   style: {
     postcssOptions: {
-      plugins: [
-        require('tailwindcss'),
-        require('autoprefixer'),
-      ],
+      plugins: ['tailwindcss', 'autoprefixer'],
     },
   },
-}
+  babel: {
+    presets: [],
+    plugins: [
+      [
+        'babel-plugin-module-resolver',
+        {
+          root: ['.'],
+          extensions: ['.js', '.jsx'],
+          alias: {
+            '@components': './src/components',
+          },
+        },
+      ],
+    ],
+  },
+};
