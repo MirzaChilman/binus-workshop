@@ -1,4 +1,5 @@
 import ProductCard from '@components/ProductCard';
+import Spinner from '@components/Spinner';
 import React, { useEffect, useRef, useState } from 'react';
 
 function Home() {
@@ -19,7 +20,7 @@ function Home() {
         };
 
         const response = await fetch(
-          'https://amazon24.p.rapidapi.com/api/product?categoryID=aps&keyword=iphone&country=US&page=1',
+          'https://amazon24.p.rapidapi.com/api/product?categoryID=aps&keyword=iphone&country=SG&page=1',
           options,
         );
 
@@ -39,7 +40,7 @@ function Home() {
   }, []);
   return (
     <main>
-      {loading && <div>Loading...</div>}
+      {loading && <Spinner />}
       {!loading && <ProductCard products={productsResponse} />}
     </main>
   );
