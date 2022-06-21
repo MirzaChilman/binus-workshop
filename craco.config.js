@@ -17,6 +17,7 @@ module.exports = {
             '@components': './src/components',
             '@routes': './src/routes',
             '@utils': './src/utils',
+            '@hooks': './src/hooks',
           },
         },
       ],
