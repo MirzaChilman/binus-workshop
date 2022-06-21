@@ -7,5 +7,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: ['@tailwindcss/aspect-ratio'],
+  plugins: ['@tailwindcss/aspect-ratio', '@tailwindcss/line-clamp'],
 };
