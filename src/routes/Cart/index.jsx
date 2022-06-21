@@ -1,12 +1,19 @@
 import React from 'react';
 import { CheckIcon, ClockIcon } from '@heroicons/react/solid';
 import useLocalStorage from '@hooks/useLocalStorage';
+import EmptyState from '@components/EmptyState';
 
 export default function Example() {
   const [cart] = useLocalStorage('cart', []);
+  console.log('🚀 ~ file: index.jsx ~ line 8 ~ Example ~ cart', cart);
   const calculatePrice = cart?.reduce((acc, currVal) => {
     return acc + currVal.app_sale_price;
   }, 0);
+
+  if (cart?.length === 0) {
+    return <EmptyState />;
+  }
+
   return (
     <div className="bg-white">
       <div className="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 ">
