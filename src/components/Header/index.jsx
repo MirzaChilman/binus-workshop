@@ -1,7 +1,10 @@
+import useLocalStorage from '@hooks/useLocalStorage';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Header() {
+  const [cart] = useLocalStorage('cart');
+
   return (
     <nav className="max-w-lg bg-gray-700 flex items-center justify-between max-w-3xl p-4 mx-auto">
       <Link
@@ -29,7 +32,7 @@ function Header() {
               />
             </svg>
             <p className="absolute bottom-[-5px] text-center bg-red-500 rounded-full">
-              0
+              {cart?.length}
             </p>
           </Link>
         </li>
